@@ -1,0 +1,69 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "awf-adf-workspace-001"
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase_Connection_password": {
+			"value": ""
+		},
+		"AzureSynapseAnalytics1_connectionString": {
+			"value": ""
+		},
+		"awfdatalake001_conn_accountKey": {
+			"value": ""
+		},
+		"awfsynapseworkspace001_conn_password": {
+			"value": ""
+		},
+		"linkedService1_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "awf-sqldb-server.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "awf-db-004"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "sqladmin"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_server": {
+			"value": "awf-sqldb-server.database.windows.net"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_database": {
+			"value": "awf-db-004"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_userName": {
+			"value": "sqladmin"
+		},
+		"AzureSqlDatabase_Connection_properties_typeProperties_server": {
+			"value": "awf-sqldb-server.database.windows.net"
+		},
+		"AzureSqlDatabase_Connection_properties_typeProperties_database": {
+			"value": "awf-db-004"
+		},
+		"AzureSqlDatabase_Connection_properties_typeProperties_userName": {
+			"value": "sqladmin"
+		},
+		"awfdatalake001_conn_properties_typeProperties_url": {
+			"value": "https://awfdatalake001.dfs.core.windows.net/"
+		},
+		"awfsynapseworkspace001_conn_properties_typeProperties_server": {
+			"value": "awf-synapse-workspace001.sql.azuresynapse.net"
+		},
+		"awfsynapseworkspace001_conn_properties_typeProperties_database": {
+			"value": "datapool"
+		},
+		"awfsynapseworkspace001_conn_properties_typeProperties_userName": {
+			"value": "sqladminuser"
+		}
+	}
+}

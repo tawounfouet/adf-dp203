@@ -1,0 +1,182 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "awf-adf-workspace-001"
+		},
+		"AzureSqlDatabase1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase1'"
+		},
+		"AzureSqlDatabase2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase2'"
+		},
+		"AzureSqlDatabase_Connection_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase_Connection'"
+		},
+		"AzureSynapseAnalytics1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics1'"
+		},
+		"awfdatalake001_conn_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'awfdatalake001_conn'"
+		},
+		"awfsynapseworkspace001_conn_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'awfsynapseworkspace001_conn'"
+		},
+		"linkedService1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'linkedService1'"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "awf-sqldb-server.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "awf-db-004"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sqladmin"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "awf-sqldb-server.database.windows.net"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "awf-db-004"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sqladmin"
+		},
+		"AzureSqlDatabase_Connection_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "awf-sqldb-server.database.windows.net"
+		},
+		"AzureSqlDatabase_Connection_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "awf-db-004"
+		},
+		"AzureSqlDatabase_Connection_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sqladmin"
+		},
+		"awfdatalake001_conn_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://awfdatalake001.dfs.core.windows.net/"
+		},
+		"awfsynapseworkspace001_conn_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "awf-synapse-workspace001.sql.azuresynapse.net"
+		},
+		"awfsynapseworkspace001_conn_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "datapool"
+		},
+		"awfsynapseworkspace001_conn_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sqladminuser"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "awf-adf-workspace-001_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureSqlDatabase1_password": {
+						"value": "[parameters('AzureSqlDatabase1_password')]"
+					},
+					"AzureSqlDatabase2_password": {
+						"value": "[parameters('AzureSqlDatabase2_password')]"
+					},
+					"AzureSqlDatabase_Connection_password": {
+						"value": "[parameters('AzureSqlDatabase_Connection_password')]"
+					},
+					"AzureSynapseAnalytics1_connectionString": {
+						"value": "[parameters('AzureSynapseAnalytics1_connectionString')]"
+					},
+					"awfdatalake001_conn_accountKey": {
+						"value": "[parameters('awfdatalake001_conn_accountKey')]"
+					},
+					"awfsynapseworkspace001_conn_password": {
+						"value": "[parameters('awfsynapseworkspace001_conn_password')]"
+					},
+					"linkedService1_connectionString": {
+						"value": "[parameters('linkedService1_connectionString')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_userName')]"
+					},
+					"AzureSqlDatabase2_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase2_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase2_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_userName')]"
+					},
+					"AzureSqlDatabase_Connection_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase_Connection_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase_Connection_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase_Connection_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase_Connection_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase_Connection_properties_typeProperties_userName')]"
+					},
+					"awfdatalake001_conn_properties_typeProperties_url": {
+						"value": "[parameters('awfdatalake001_conn_properties_typeProperties_url')]"
+					},
+					"awfsynapseworkspace001_conn_properties_typeProperties_server": {
+						"value": "[parameters('awfsynapseworkspace001_conn_properties_typeProperties_server')]"
+					},
+					"awfsynapseworkspace001_conn_properties_typeProperties_database": {
+						"value": "[parameters('awfsynapseworkspace001_conn_properties_typeProperties_database')]"
+					},
+					"awfsynapseworkspace001_conn_properties_typeProperties_userName": {
+						"value": "[parameters('awfsynapseworkspace001_conn_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
