@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "pipeline2",
 	"properties": {
 		"activities": [
 			{
@@ -30,14 +30,7 @@
 						"type": "SqlDWSink",
 						"allowCopyCommand": true
 					},
-					"enableStaging": true,
-					"stagingSettings": {
-						"linkedServiceName": {
-							"referenceName": "awfdatalake001_conn",
-							"type": "LinkedServiceReference"
-						},
-						"path": "staging"
-					},
+					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
