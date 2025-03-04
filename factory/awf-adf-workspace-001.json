@@ -1,0 +1,9 @@
+{
+	"name": "awf-adf-workspace-001",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a5f2c553-20a6-4c09-95b9-cc2b77e6ee78",
+		"tenantId": "ad1939d2-f9da-4368-843f-1a107d362a4d"
+	}
+}
