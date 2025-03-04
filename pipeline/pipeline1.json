@@ -30,7 +30,14 @@
 						"type": "SqlDWSink",
 						"allowCopyCommand": true
 					},
-					"enableStaging": false,
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "awfdatalake001_conn",
+							"type": "LinkedServiceReference"
+						},
+						"path": "staging"
+					},
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
