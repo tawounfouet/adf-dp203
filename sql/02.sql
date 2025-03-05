@@ -23,3 +23,12 @@ WITH
 (
     DISTRIBUTION=HASH(ProductID)
 )
+
+
+
+SELECT *
+FROM OPENROWSET(
+    BULK 'https://nomducompte.dfs.core.windows.net/conteneur/fichier.csv',
+    FORMAT='CSV',
+    HEADER_ROW=TRUE
+) AS result
